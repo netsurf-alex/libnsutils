@@ -46,7 +46,7 @@ nsuerror nsu_getmonotonic_ms(uint64_t *current_out)
 
     clock_gettime(CLOCK_MONOTONIC, &tp);
     current = (tp.tv_sec * 1000) + (tp.tv_nsec / 1000000);
-#elif defined(WIN32)
+#elif defined(_WIN32)
     current = GetTickCount64();
 #elif defined(__riscos)
     os_t time;
